@@ -2,10 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
                 sh "java --version"
-                sh "mvn -D clean verify"
+                withMaven {
+                          sh "mvn clean verify"
+                        }
+                // sh "mvn -D clean verify"
             }
 
             post {
