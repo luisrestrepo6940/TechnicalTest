@@ -1,14 +1,21 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
-            steps {
-                sh "java --version"
-                sh 'mvn -B -DskipTests clean package'
-                // sh "mvn -D clean verify"
-            }
+        stage('Initialize'){
+                    steps{
+                        echo "PATH = ${M2_HOME}/bin:${PATH}"
+                        echo "M2_HOME = /opt/maven"
+                    }
         }
+        stage('Build') {
+                    steps {
+                        dir("/var/lib/jenkins/workspace/TestingPipeline") {
+                        sh "java --version"
+                        sh 'mvn -B -DskipTests clean package'
+                        // sh "mvn -D clean verify"
+                        }
+                    }
+                }
         stage('Test') {
             steps {
                    sh 'mvn test'
