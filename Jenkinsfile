@@ -5,12 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh "java --version"
-                withMaven {
-                          sh "mvn clean verify"
-                        }
+                sh 'mvn -B -DskipTests clean package'
                 // sh "mvn -D clean verify"
             }
-
+        }
+        stage('Test') {
+            steps {
+                   sh 'mvn test'
+                  }
             post {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
