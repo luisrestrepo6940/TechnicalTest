@@ -3,11 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                   echo "Version java: "
                    sh "java --version"
-                   dir("TechnicalTest"){
                    sh "mvn clean compile test"
-                   }
                   }
             post {
                 // If Maven was able to run the tests, even if some of the test
