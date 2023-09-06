@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                   echo "Version java: " java --version
+                   echo "Version java: "
+                   sh java --version
                    dir("TechnicalTest"){
                    sh "mvn clean compile test"
                    }
