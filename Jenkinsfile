@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                   echo "java --version"
+                   echo "Version java: " java --version
                    dir("TechnicalTest"){
-                   sh 'mvn clean compile test'
+                   sh "mvn clean compile test"
                    }
                   }
             post {
@@ -18,11 +18,9 @@ pipeline {
         }
         stage('Build') {
                         steps {
-                                dir("/var/lib/jenkins/workspace/TestingPipeline") {
-                                sh 'mvn -B -DskipTests clean package'
-                                // sh "mvn -D clean verify"
-                                }
-                        }
+                                sh "mvn clean install -Dmaven.test.skip=true"
+                              }
+
         }
     }
 }
