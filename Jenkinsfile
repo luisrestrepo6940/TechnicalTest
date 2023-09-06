@@ -7,18 +7,12 @@ pipeline {
                         echo "M2_HOME = /opt/maven"
                     }
         }
-        stage('Build') {
-                    steps {
-                        dir("/var/lib/jenkins/workspace/TestingPipeline") {
-                        sh "java --version"
-                        sh 'mvn -B -DskipTests clean package'
-                        // sh "mvn -D clean verify"
-                        }
-                    }
-                }
         stage('Test') {
             steps {
-                   sh 'mvn test'
+                   echo "java --version"
+                   Dir("TechnicalTest"){
+                   sh 'mvn clean compile test'
+                   }
                   }
             post {
                 // If Maven was able to run the tests, even if some of the test
@@ -27,6 +21,14 @@ pipeline {
                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/serenity/', reportFiles: 'index.html', reportName: 'Serenity Report', reportTitles: '', useWrapperFileDirectly: true])
                 }
             }
+        }
+        stage('Build') {
+                        steps {
+                                dir("/var/lib/jenkins/workspace/TestingPipeline") {
+                                sh 'mvn -B -DskipTests clean package'
+                                // sh "mvn -D clean verify"
+                                }
+                        }
         }
     }
 }
