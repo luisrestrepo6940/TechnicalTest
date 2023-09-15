@@ -9,17 +9,6 @@ pipeline {
             steps {
                    sh "mvn clean verify"
                   }
-                  post{
-                            publishHTML([allowMissing: false,
-                                alwaysLinkToLastBuild: true,
-                                includes: '**/*.html,  **/*.css, **/*.log',
-                                keepAll: false,
-                                reportDir: 'target/site/serenity/',
-                                reportFiles: 'index.html',
-                                reportName: 'Test Result Report',
-                                reportTitles: 'Test Result Report',
-                                useWrapperFileDirectly: true])
-                  }
         }
         stage('Build') {
                         steps {
@@ -27,4 +16,17 @@ pipeline {
                               }
         }
     }
+    post{
+                always{
+                    publishHTML([allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    includes: '**/*.html,  **/*.css, **/*.log',
+                    keepAll: false,
+                    reportDir: 'target/site/serenity/',
+                    reportFiles: 'index.html',
+                    reportName: 'Test Result Report',
+                    reportTitles: 'Test Result Report',
+                    useWrapperFileDirectly: true])
+                }
+        }
 }
