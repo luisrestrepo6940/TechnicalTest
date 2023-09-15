@@ -9,22 +9,24 @@ pipeline {
             steps {
                    sh "mvn clean compile test"
                   }
-                  post{
-                            publishHTML([allowMissing: false,
-                                alwaysLinkToLastBuild: true,
-                                includes: '**/*.html,  **/*.css, **/*.log',
-                                keepAll: false,
-                                reportDir: 'target/site/serenity/',
-                                reportFiles: 'index.html',
-                                reportName: 'Test Result Report',
-                                reportTitles: 'Test Result Report',
-                                useWrapperFileDirectly: true])
-                  }
         }
         stage('Build') {
                         steps {
                                 sh "mvn clean install -Dmaven.test.skip=true"
                               }
         }
+    }
+    post{
+            always{
+                publishHTML([allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                includes: '**/*.html,  **/*.css, **/*.log',
+                keepAll: false,
+                reportDir: 'target/site/serenity/',
+                reportFiles: 'index.html',
+                reportName: 'Test Result Report',
+                reportTitles: 'Test Result Report',
+                useWrapperFileDirectly: true])
+            }
     }
 }
