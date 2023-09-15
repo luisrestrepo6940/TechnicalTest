@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                   sh "mvn clean compile test"
+                   sh "mvn clean verify"
                   }
                   post{
                             publishHTML([allowMissing: false,
