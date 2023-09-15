@@ -7,16 +7,18 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                   sh "mvn clean verify"
-                   publishHTML([allowMissing: false,
-                                            alwaysLinkToLastBuild: true,
-                                            includes: '**/*.html,  **/*.css, **/*.log',
-                                            keepAll: false,
-                                            reportDir: '/opt/reports',
-                                            reportFiles: 'index.html',
-                                            reportName: 'Test Result Report',
-                                            reportTitles: 'Test Result Report',
-                                            useWrapperFileDirectly: true])
+                   sh "mvn clean compile test"
+                  }
+                  post{
+                            publishHTML([allowMissing: false,
+                                alwaysLinkToLastBuild: true,
+                                includes: '**/*.html,  **/*.css, **/*.log',
+                                keepAll: false,
+                                reportDir: 'target/site/serenity/',
+                                reportFiles: 'index.html',
+                                reportName: 'Test Result Report',
+                                reportTitles: 'Test Result Report',
+                                useWrapperFileDirectly: true])
                   }
         }
         stage('Build') {
