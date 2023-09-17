@@ -16,7 +16,7 @@ pipeline {
                         keepAll: false,
                         reportDir: 'target/site/serenity',
                         reportFiles: 'index.html',
-                        reportName: 'TestResultReport.html',
+                        reportName: 'Test Result Report',
                         useWrapperFileDirectly: true])
                     }
             }
