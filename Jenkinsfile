@@ -14,10 +14,9 @@ pipeline {
                         publishHTML([allowMissing: false,
                         alwaysLinkToLastBuild: false,
                         keepAll: false,
-                        reportDir: 'target/site/serenity/',
+                        reportDir: 'endToEnd',
                         reportFiles: 'index.html',
-                        reportName: 'Serenity Test Result Report',
-                        reportTitles: 'Test Result Report',
+                        reportName: 'Test Result Report',
                         useWrapperFileDirectly: true])
                     }
             }

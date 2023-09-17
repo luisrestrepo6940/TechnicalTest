@@ -5,7 +5,7 @@
     <artifactId>cucumber-starter</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Technical Test Neoris</name>
+    <name>Technical Test</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>3.9.4</serenity.version>
