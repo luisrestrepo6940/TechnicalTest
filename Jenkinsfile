@@ -7,7 +7,7 @@ pipeline {
         stages {
             stage('Test') {
                 steps {
-                    sh "mvn -D clean verify -Ddriver=firefox"
+                    sh "mvn clean verify"
                 }
         	post{
                     always{
