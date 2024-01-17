@@ -3,10 +3,10 @@ package co.com.tasks;
 import co.com.interactions.AddProduct;
 import co.com.questions.CheckNameProduct;
 import co.com.utils.EnumVariablesSesion;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

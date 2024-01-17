@@ -2,9 +2,9 @@ package co.com.tasks;
 
 import co.com.interactions.OpenApplication;
 import co.com.questions.CheckApplicationOpening;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.thucydides.core.annotations.Step;
 import org.hamcrest.CoreMatchers;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;

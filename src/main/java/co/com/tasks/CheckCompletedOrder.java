@@ -1,10 +1,10 @@
 package co.com.tasks;
 
 import co.com.questions.CheckConfirmationMessage;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

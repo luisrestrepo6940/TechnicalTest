@@ -5,9 +5,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
+import net.serenitybdd.model.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.screenplay.Actor;
-import net.thucydides.core.util.EnvironmentVariables;
+import net.thucydides.model.util.EnvironmentVariables;
 
 public class BuyProductsWebsite {
 
@@ -15,8 +15,7 @@ public class BuyProductsWebsite {
 
     @Given("the {actor} access to the web site")
     public void accessToTheWebSite(Actor actor) {
-        String endpointBaseUrl = EnvironmentSpecificConfiguration.from(environmentVariables)
-                .getProperty("webdriver.base.url");
+        String endpointBaseUrl = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("webdriver.base.url");
         actor.wasAbleTo(OpenTheApplication.startApplication(endpointBaseUrl));
     }
 

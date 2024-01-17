@@ -8,7 +8,7 @@
     <name>Technical Test</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>3.9.4</serenity.version>
+        <serenity.version>4.0.43</serenity.version>
         <encoding>UTF-8</encoding>
         <tags/>
         <webdriver.base.url/>
@@ -94,13 +94,13 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay-webdriver</artifactId>
-            <version>3.9.4</version>
+            <version>${serenity.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay</artifactId>
-            <version>3.9.4</version>
+            <version>${serenity.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -112,7 +112,7 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-ensure</artifactId>
-            <version>3.9.4</version>
+            <version>${serenity.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -121,6 +121,12 @@
             <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-model</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

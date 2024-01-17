@@ -4,10 +4,10 @@ import co.com.interactions.EnterInformation;
 import co.com.interactions.PressButton;
 import co.com.questions.CheckApplicationAccess;
 import co.com.userinterface.LoginPage;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

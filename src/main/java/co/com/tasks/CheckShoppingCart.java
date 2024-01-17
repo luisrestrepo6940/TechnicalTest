@@ -6,11 +6,11 @@ import co.com.questions.CheckQuantityProducts;
 import co.com.userinterface.ProductsPage;
 import co.com.userinterface.ShoppingCartPage;
 import co.com.utils.EnumVariablesSesion;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
